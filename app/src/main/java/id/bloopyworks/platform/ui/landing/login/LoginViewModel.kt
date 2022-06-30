@@ -6,6 +6,7 @@ import id.bloopyworks.platform.core.data.bloopyRepository
 import id.bloopyworks.platform.core.data.source.local_datastore.DataStoreRepository
 import id.bloopyworks.platform.core.data.source.remote.network.ResponseModel
 import id.bloopyworks.platform.core.data.source.remote.request.LoginAPIRequest
+import id.bloopyworks.platform.core.data.source.remote.response.LoginAPIResponse
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.collect
@@ -18,7 +19,8 @@ class LoginViewModel(
 
 ) : ViewModel() {
 
-    val data = MutableStateFlow<ResponseModel<Response<LoginAPIRequest>>>(ResponseModel.Idle("Idle State"))
+    val data =
+        MutableStateFlow<ResponseModel<Response<LoginAPIResponse>>>(ResponseModel.Idle("Idle State"))
 
     suspend fun login(request: LoginAPIRequest) {
         data.emit(ResponseModel.Loading())
@@ -38,3 +40,4 @@ class LoginViewModel(
             dataStore.saveTokenKey(token)
         }
     }
+}

@@ -18,7 +18,7 @@ plugins {
     id 'org.jetbrains.kotlin.android' version '1.6.21' apply false
 }
 ext {
-    kotlin_version = "1.6.20"
+    kotlin_version = "1.5.31"
     core_version = "1.7.0"
     appcompat_version = "1.4.1"
     material_version = "1.5.0"

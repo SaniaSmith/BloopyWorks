@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_navigation"
-    app:startDestination="@id/homepageFragment">
+    app:startDestination="@id/loginFragment">
 
     <action
         android:id="@+id/fragment_to_homepage"
@@ -25,17 +25,17 @@
         tools:layout="@layout/fragment_get_started" >
         <action
             android:id="@+id/getStarted_to_login"
-            app:destination="@id/loginDialogFragment" />
+            app:destination="@id/loginFragment" />
         <action
             android:id="@+id/getStarted_to_signUp"
             app:destination="@id/signUpDialogFragment" />
     </fragment>
 
     <fragment
-        android:id="@+id/loginDialogFragment"
-        android:name="id.bloopyworks.platform.ui.landing.login.LoginDialogFragment"
-        android:label="fragment_login_dialog"
-        tools:layout="@layout/fragment_login_dialog" >
+        android:id="@+id/loginFragment"
+        android:name="id.bloopyworks.platform.ui.landing.login.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
         <action
             android:id="@+id/login_to_signUp"
             app:destination="@id/signUpDialogFragment" />

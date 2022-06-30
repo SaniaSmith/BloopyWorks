@@ -1,14 +1,11 @@
 package id.bloopyworks.platform.ui.landing.login
 
-import android.graphics.Color
-import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.fragment.app.DialogFragment
+import androidx.fragment.app.Fragment
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
@@ -19,15 +16,15 @@ import androidx.navigation.fragment.findNavController
 import id.bloopyworks.platform.R
 import id.bloopyworks.platform.core.data.source.remote.network.ResponseModel
 import id.bloopyworks.platform.core.data.source.remote.request.LoginAPIRequest
-import id.bloopyworks.platform.databinding.FragmentLoginDialogBinding
+import id.bloopyworks.platform.databinding.FragmentLoginBinding
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 
-class LoginDialogFragment : DialogFragment(), View.OnClickListener {
-    private var _binding: FragmentLoginDialogBinding? = null
+class LoginFragment : Fragment(), View.OnClickListener {
+    private var _binding: FragmentLoginBinding? = null
     private val binding get() = _binding
 
     private val viewModel by sharedViewModel<LoginViewModel>()
@@ -37,13 +34,7 @@ class LoginDialogFragment : DialogFragment(), View.OnClickListener {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        _binding = FragmentLoginDialogBinding.inflate(inflater, container, false)
-
-        //set dialog background transparent
-        if (dialog != null && dialog?.window != null) {
-            dialog?.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
-        }
-
+        _binding = FragmentLoginBinding.inflate(inflater, container, false)
         return binding?.root
     }
 
@@ -115,7 +106,7 @@ class LoginDialogFragment : DialogFragment(), View.OnClickListener {
                                     val navOptions = NavOptions.Builder()
                                         .setPopUpTo(R.id.homepageFragment, true)
                                         .build()
-                                    val action = LoginDialogFragmentDirections.loginToHomepage()
+                                    val action = LoginFragmentDirections.loginToHomepage()
                                     findNavController().navigate(action, navOptions)
 
                                 } else {

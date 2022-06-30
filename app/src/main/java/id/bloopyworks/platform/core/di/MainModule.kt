@@ -7,6 +7,7 @@ import id.bloopyworks.platform.core.data.source.local_datastore.DataStoreReposit
 import id.bloopyworks.platform.core.data.source.remote.RemoteDataSource
 import id.bloopyworks.platform.core.data.source.remote.network.ApiService
 import id.bloopyworks.platform.core.utlis.Constant
+import id.bloopyworks.platform.ui.landing.login.LoginViewModel
 import id.bloopyworks.platform.ui.mainactivity.MainActivityViewModel
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -21,6 +22,7 @@ import java.util.concurrent.TimeUnit
 
 val viewModelModule = module {
     viewModel { MainActivityViewModel(get()) }
+    viewModel { LoginViewModel(get(), get()) }
 }
 
 val repositoryModule = module {
@@ -58,7 +60,7 @@ val networkModule = module {
 
     single {
         val retrofit = Retrofit.Builder()
-            .baseUrl(Constant.VERSION1)
+            .baseUrl(Constant.base_url)
             .addConverterFactory(GsonConverterFactory.create())
             .client(get())
             .build()
