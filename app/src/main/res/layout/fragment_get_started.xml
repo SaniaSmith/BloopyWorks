@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.landing.GetStartedFragment"
+    android:orientation="vertical"
+    android:layout_gravity="center_vertical">
+
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="336dp"
+        android:layout_height="132dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="60dp"
+        android:src="@drawable/logo" />
+
+    <ImageView
+        android:id="@+id/creditImage"
+        android:src="@drawable/ic_credit_card"
+        android:layout_width="290dp"
+        android:layout_height="216dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="43dp" />
+
+    <TextView
+        android:id="@+id/appDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="48dp"
+        android:fontFamily="@font/montserrat_medium"
+        android:text="@string/app_dec"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="20sp"/>
+
+    <TextView
+        android:id="@+id/appSmallDesc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="14dp"
+        android:fontFamily="@font/montserrat_regular"
+        android:text="@string/app_small_desc"
+        android:textAlignment="center"
+        android:textColor="@color/black_desc"
+        android:textSize="13sp"/>
+
+    <Button
+        android:id="@+id/btn_getStarted"
+        android:layout_width="238dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="50dp"
+        android:layout_gravity="center"
+        android:backgroundTint="@color/button_light"
+        android:fontFamily="@font/montserrat_medium"
+        android:text="@string/get_started"
+        android:textColor="@color/blue"
+        android:textSize="20sp"
+        app:cornerRadius="20dp"
+        android:letterSpacing="0"/>
+
+    <Button
+        android:id="@+id/btn_continue"
+        android:layout_width="238dp"
+        android:layout_height="68dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="17dp"
+        android:backgroundTint="@color/blue"
+        android:fontFamily="@font/montserrat_medium"
+        android:text="@string/cont"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        app:cornerRadius="20dp"
+        android:letterSpacing="0"/>
+
+</LinearLayout>

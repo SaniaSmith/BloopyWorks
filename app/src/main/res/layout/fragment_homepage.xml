@@ -1,0 +1,385 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.mainscreen.homepage.HomepageBlankFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="415dp"
+            android:background="@color/blue">
+
+            <TextView
+                android:id="@+id/appsname"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="133dp"
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/montserrat_semi_bold"
+                android:text="@string/app_name"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+            <ImageButton
+                android:id="@+id/notification"
+                android:layout_width="45dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="80dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="2dp"
+                android:layout_toEndOf="@+id/appsname"
+                android:backgroundTint="@color/transparent"
+                android:src="@drawable/ic_notifications"/>
+
+            <TextView
+                android:id="@+id/employee_name"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/appsname"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="22dp"
+                android:fontFamily="@font/montserrat_medium"
+                android:text="@string/employee_name"
+                android:textColor="@color/white"
+                android:textSize="17sp" />
+
+            <TextView
+                android:id="@+id/employee_position"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/employee_name"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="3dp"
+                android:fontFamily="@font/montserrat_regular"
+                android:text="@string/employee_position"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profileImage"
+                android:layout_width="50dp"
+                android:layout_height="49dp"
+                android:layout_below="@+id/notification"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="15dp"
+                android:layout_toEndOf="@+id/employee_name"
+                android:src="@drawable/ic_account_circle" />
+
+            <RelativeLayout
+                android:id="@+id/homepage_menu"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_below="@+id/employee_position"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="20dp"
+                android:layout_marginBottom="20dp"
+                android:background="@drawable/homepage_menu">
+
+                <TextView
+                    android:id="@+id/btn_attendance"
+                    android:layout_width="70dp"
+                    android:layout_height="64dp"
+                    android:clickable="true"
+                    android:layout_marginStart="30dp"
+                    android:layout_marginTop="25dp"
+                    android:backgroundTint="@color/transparent"
+                    android:drawableTop="@drawable/ic_attendance"
+                    android:drawablePadding="5dp"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:text="@string/attendance"
+                    android:textColor="@color/black_desc"
+                    android:textSize="11sp"/>
+
+                <TextView
+                    android:id="@+id/btn_overtime"
+                    android:layout_width="70dp"
+                    android:layout_height="64dp"
+                    android:clickable="true"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_toEndOf="@id/btn_attendance"
+                    android:backgroundTint="@color/transparent"
+                    android:drawableTop="@drawable/ic_overtime"
+                    android:drawablePadding="5dp"
+                    android:textAlignment="center"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:text="@string/overtime"
+                    android:textColor="@color/black_desc"
+                    android:textSize="11sp" />
+
+                <TextView
+                    android:id="@+id/btn_early"
+                    android:layout_width="70dp"
+                    android:layout_height="64dp"
+                    android:clickable="true"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_toEndOf="@+id/btn_overtime"
+                    android:backgroundTint="@color/transparent"
+                    android:drawableTop="@drawable/ic_early"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:text="@string/early"
+                    android:textColor="@color/black_desc"
+                    android:textSize="11sp"
+                    android:textAlignment="center"/>
+
+                <TextView
+                    android:id="@+id/btn_timeOff"
+                    android:layout_width="70dp"
+                    android:layout_height="64dp"
+                    android:layout_below="@id/btn_attendance"
+                    android:layout_marginStart="33dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginEnd="58dp"
+                    android:clickable="true"
+                    android:backgroundTint="@color/transparent"
+                    android:drawableTop="@drawable/ic_time_off"
+                    android:drawablePadding="5dp"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:text="@string/off"
+                    android:textColor="@color/black_desc"
+                    android:textSize="11sp"
+                    android:textAlignment="center"/>
+
+                <TextView
+                    android:id="@+id/btn_liveloc"
+                    android:layout_width="70dp"
+                    android:layout_height="64dp"
+                    android:layout_below="@+id/btn_overtime"
+                    android:layout_marginStart="-21dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_toEndOf="@+id/btn_timeOff"
+                    android:clickable="true"
+                    android:backgroundTint="@color/transparent"
+                    android:drawableTop="@drawable/ic_live_location"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:text="@string/loc"
+                    android:textColor="@color/black_desc"
+                    android:textSize="11sp"
+                    android:textAlignment="center"/>
+
+                <TextView
+                    android:id="@+id/btn_paySlip"
+                    android:layout_width="70dp"
+                    android:layout_height="64dp"
+                    android:layout_below="@+id/btn_early"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_toEndOf="@+id/btn_liveloc"
+                    android:backgroundTint="@color/transparent"
+                    android:drawableTop="@drawable/ic_payslip"
+                    android:drawablePadding="5dp"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:text="@string/pay_slip"
+                    android:textAllCaps="false"
+                    android:textColor="@color/black_desc"
+                    android:textSize="11sp"
+                    android:textAlignment="center"/>
+
+            </RelativeLayout>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card1"
+                android:layout_width="102dp"
+                android:layout_height="49dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginBottom="20dp"
+                android:clickable="true"
+                app:cardCornerRadius="10dp"
+                android:layout_below="@+id/homepage_menu"
+                android:background="@drawable/homepage_small_menu">
+
+                <ImageView
+                    android:id="@+id/card1Image"
+                    android:layout_width="26dp"
+                    android:layout_height="27dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="11dp"
+                    app:srcCompat="@drawable/ic_calender_gray" />
+
+                <TextView
+                    android:id="@+id/card1Text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginStart="45dp"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:text="@string/req"
+                    android:textColor="@color/black_desc"
+                    android:textSize="10sp" />
+
+                <TextView
+                    android:id="@+id/card1Text2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginStart="45dp"
+                    android:layout_marginBottom="11dp"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="@string/off"
+                    android:textColor="@color/black"
+                    android:textSize="10sp"/>
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card2"
+                android:layout_width="102dp"
+                android:layout_height="49dp"
+                android:layout_below="@+id/homepage_menu"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginBottom="20dp"
+                android:layout_toEndOf="@+id/card1"
+                android:clickable="true"
+                app:cardCornerRadius="10dp">
+
+                <ImageView
+                    android:id="@+id/card2Image"
+                    android:layout_width="26dp"
+                    android:layout_height="27dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="11dp"
+                    app:srcCompat="@drawable/ic_overtime_gray" />
+
+                <TextView
+                    android:id="@+id/card2Text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="45dp"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:text="@string/overtime"
+                    android:textColor="@color/black_desc"
+                    android:textSize="10sp" />
+
+                <TextView
+                    android:id="@+id/card2Text2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="45dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginBottom="11dp"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="@string/time"
+                    android:textColor="@color/black"
+                    android:textSize="10sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card3"
+                android:layout_width="102dp"
+                android:layout_height="49dp"
+                android:layout_below="@+id/homepage_menu"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="1dp"
+                android:layout_marginBottom="20dp"
+                android:layout_toEndOf="@+id/card2"
+                android:clickable="true"
+                app:cardCornerRadius="10dp">
+
+                <ImageView
+                    android:id="@+id/card3Image"
+                    android:layout_width="26dp"
+                    android:layout_height="27dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="11dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/ic_early_gray" />
+
+                <TextView
+                    android:id="@+id/card3Text"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="45dp"
+                    android:layout_marginTop="8dp"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:text="@string/card_early"
+                    android:textColor="@color/black_desc"
+                    android:textSize="10sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/card3Text2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="45dp"
+                    android:layout_marginTop="25dp"
+                    android:layout_marginBottom="11dp"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:text="@string/time"
+                    android:textColor="@color/black"
+                    android:textSize="10sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent" />
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingBottom="10dp">
+
+                <TextView
+                    android:id="@+id/announcementTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="6dp"
+                    android:fontFamily="@font/montserrat_regular"
+                    android:text="@string/announcement"
+                    android:textColor="@color/black"
+                    android:textSize="15sp"
+                    android:layout_gravity="center_vertical"/>
+
+                <TextView
+                    android:id="@+id/viewAll"
+                    android:layout_width="44dp"
+                    android:layout_height="17dp"
+                    android:layout_marginTop="6dp"
+                    android:layout_marginEnd="16dp"
+                    android:clickable="true"
+                    android:fontFamily="@font/montserrat_light"
+                    android:text="@string/all"
+                    android:textColor="@color/black"
+                    android:textSize="10sp"
+                    android:layout_marginStart="210dp"
+                    android:layout_gravity="center_vertical"/>
+
+            </LinearLayout>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/homepageRecyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

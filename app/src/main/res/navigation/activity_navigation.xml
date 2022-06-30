@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_navigation"
+    app:startDestination="@id/homepageFragment">
+
+    <action
+        android:id="@+id/fragment_to_homepage"
+        app:destination="@+id/homepageFragment"/>
+    <action
+        android:id="@+id/fragment_to_getStarted"
+        app:destination="@+id/getStartedFragment"/>
+
+    <fragment
+        android:id="@+id/homepageFragment"
+        android:name="id.bloopyworks.platform.ui.mainscreen.homepage.HomepageBlankFragment"
+        android:label="fragment_homepage"
+        tools:layout="@layout/fragment_homepage" />
+
+    <fragment
+        android:id="@+id/getStartedFragment"
+        android:name="id.bloopyworks.platform.ui.landing.GetStartedFragment"
+        android:label="fragment_get_started"
+        tools:layout="@layout/fragment_get_started" >
+        <action
+            android:id="@+id/getStarted_to_login"
+            app:destination="@id/loginDialogFragment" />
+        <action
+            android:id="@+id/getStarted_to_signUp"
+            app:destination="@id/signUpDialogFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/loginDialogFragment"
+        android:name="id.bloopyworks.platform.ui.landing.login.LoginDialogFragment"
+        android:label="fragment_login_dialog"
+        tools:layout="@layout/fragment_login_dialog" >
+        <action
+            android:id="@+id/login_to_signUp"
+            app:destination="@id/signUpDialogFragment" />
+        <action
+            android:id="@+id/login_to_homepage"
+            app:destination="@id/homepageFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/signUpDialogFragment"
+        android:name="id.bloopyworks.platform.ui.landing.signUp.SignUpDialogFragment"
+        android:label="fragment_sign_up_dialog"
+        tools:layout="@layout/fragment_sign_up_dialog" />
+
+</navigation>

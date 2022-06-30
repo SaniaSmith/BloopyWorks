@@ -1,0 +1,46 @@
+<resources>
+    <string name="app_name">Bloopy Works</string>
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Password</string>
+    <string name="action_sign_in">Sign in or register</string>
+    <string name="action_sign_in_short">Sign in</string>
+    <string name="welcome">"Welcome!"</string>
+    <string name="invalid_username">Not a valid username</string>
+    <string name="invalid_password">Password must be >5 characters</string>
+    <string name="login_failed">"Login failed"</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <!-- String For Get Started Fragment -->
+    <string name="app_dec">Make a Perfect Payment\nSystem For Your Company</string>
+    <string name="app_small_desc">Help to Calculate All Your Employee\nSalary and Bonus</string>
+    <string name="get_started">Get Started</string>
+    <string name="cont">Continue</string>
+
+    <!-- String For Login Fragment -->
+    <string name="btn_login">Login</string>
+    <string name="welcomeBack">Welcome Back</string>
+    <string name="loginAccount">Login Into Your Account</string>
+    <string name="forgotPass"><u>Forgot Password</u></string>
+    <string name="forgotPassActivity">Forgot Password</string>
+    <string name="dontHaveAcc">Doesn\'t have an account?</string>
+    <string name="btn_signUp"><u>Sign Up</u></string>
+
+    <!-- String For Homepage Fragment-->
+    <string name="employee_name">Employee Name</string>
+    <string name="employee_position">Employee Position</string>
+    <string name="attendance">Attendance</string>
+    <string name="early">Go Home Early</string>
+    <string name="overtime">Overtime</string>
+    <string name="loc">Live Location</string>
+    <string name="off">Time Off</string>
+    <string name="pay_slip">My Payslip</string>
+    <string name="req">Request</string>
+    <string name="card_early">Early</string>
+    <string name="time">0 Hours</string>
+    <string name="announcement">Announcement</string>
+    <string name="all">View All</string>
+
+
+</resources>
