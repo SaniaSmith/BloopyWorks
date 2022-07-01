@@ -88,16 +88,17 @@
                     android:id="@+id/btn_attendance"
                     android:layout_width="70dp"
                     android:layout_height="64dp"
-                    android:clickable="true"
                     android:layout_marginStart="30dp"
                     android:layout_marginTop="25dp"
                     android:backgroundTint="@color/transparent"
+                    android:clickable="true"
                     android:drawableTop="@drawable/ic_attendance"
                     android:drawablePadding="5dp"
                     android:fontFamily="@font/montserrat_regular"
                     android:text="@string/attendance"
                     android:textColor="@color/black_desc"
-                    android:textSize="11sp"/>
+                    android:textSize="11sp"
+                    android:textAlignment="center"/>
 
                 <TextView
                     android:id="@+id/btn_overtime"
@@ -120,17 +121,18 @@
                     android:id="@+id/btn_early"
                     android:layout_width="70dp"
                     android:layout_height="64dp"
-                    android:clickable="true"
                     android:layout_marginStart="40dp"
                     android:layout_marginTop="25dp"
                     android:layout_toEndOf="@+id/btn_overtime"
                     android:backgroundTint="@color/transparent"
+                    android:clickable="true"
                     android:drawableTop="@drawable/ic_early"
+                    android:drawablePadding="5dp"
                     android:fontFamily="@font/montserrat_regular"
                     android:text="@string/early"
+                    android:textAlignment="center"
                     android:textColor="@color/black_desc"
-                    android:textSize="11sp"
-                    android:textAlignment="center"/>
+                    android:textSize="11sp" />
 
                 <TextView
                     android:id="@+id/btn_timeOff"
@@ -158,14 +160,15 @@
                     android:layout_marginStart="-21dp"
                     android:layout_marginTop="25dp"
                     android:layout_toEndOf="@+id/btn_timeOff"
-                    android:clickable="true"
                     android:backgroundTint="@color/transparent"
+                    android:clickable="true"
                     android:drawableTop="@drawable/ic_live_location"
+                    android:drawablePadding="5dp"
                     android:fontFamily="@font/montserrat_regular"
                     android:text="@string/loc"
+                    android:textAlignment="center"
                     android:textColor="@color/black_desc"
-                    android:textSize="11sp"
-                    android:textAlignment="center"/>
+                    android:textSize="11sp" />
 
                 <TextView
                     android:id="@+id/btn_paySlip"

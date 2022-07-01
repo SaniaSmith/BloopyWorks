@@ -50,6 +50,7 @@ class LoginFragment : Fragment(), View.OnClickListener {
         when(view) {
             binding?.btnLogin -> {
                 login()
+
             }
 
             binding?.btnSignUp -> {
@@ -102,12 +103,13 @@ class LoginFragment : Fragment(), View.OnClickListener {
                                     //stored token
                                     viewModel.saveTokenKey(token)
 
-                                    //navigate to HomeFragment layout
+                                    //navigate to HomepageFragment layout
                                     val navOptions = NavOptions.Builder()
                                         .setPopUpTo(R.id.homepageFragment, true)
                                         .build()
                                     val action = LoginFragmentDirections.loginToHomepage()
                                     findNavController().navigate(action, navOptions)
+
 
                                 } else {
                                     Toast.makeText(requireContext(), "Token tidak tersedia", Toast.LENGTH_SHORT).show()

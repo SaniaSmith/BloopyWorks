@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".ui.landing.GetStartedFragment"
+    tools:context=".ui.landing.getStarted.GetStartedFragment"
     android:orientation="vertical"
     android:layout_gravity="center_vertical">
 
@@ -14,7 +14,7 @@
         android:layout_height="132dp"
         android:layout_gravity="center"
         android:layout_marginTop="60dp"
-        android:src="@drawable/logo" />
+        android:src="@drawable/logo_bg_remove" />
 
     <ImageView
         android:id="@+id/creditImage"

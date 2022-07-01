@@ -29,7 +29,7 @@
             android:layout_height="118dp"
             android:layout_gravity="center"
             android:layout_marginTop="27dp"
-            app:srcCompat="@drawable/logo" />
+            app:srcCompat="@drawable/logo_bg_remove" />
 
         <TextView
             android:id="@+id/welcomeBack"

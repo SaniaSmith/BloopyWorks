@@ -2,6 +2,7 @@ package id.bloopyworks.platform.core.data
 
 import id.bloopyworks.platform.core.data.source.remote.RemoteDataSource
 import id.bloopyworks.platform.core.data.source.remote.request.LoginAPIRequest
+import id.bloopyworks.platform.core.data.source.remote.response.GetAuthenticationUserResponse
 import id.bloopyworks.platform.core.data.source.remote.response.LoginAPIResponse
 import id.bloopyworks.platform.core.domain_repository.IBloopyRepository
 import kotlinx.coroutines.flow.Flow
@@ -14,6 +15,11 @@ class bloopyRepository(
     //Login
     override suspend fun loginUser(request: LoginAPIRequest) : Flow<Response<LoginAPIResponse>> {
         return remoteDataSource.loginUser(request)
+    }
+
+    //Authentication User
+    suspend fun authenticationUser(token : String) : Flow<Response<GetAuthenticationUserResponse>> {
+        return remoteDataSource.authenticationUser(token)
     }
 
 }
