@@ -18,7 +18,16 @@
     <string name="get_started">Get Started</string>
     <string name="cont">Continue</string>
 
+    <!-- String For SignUp Fragment-->
+    <string name="sign_up_desc">Create Your Account</string>
+    <string name="terms">By Registering You Agree With Our</string>
+    <string name="btn_terms"><u>Terms and Service</u></string>
+    <string name="regis">Register</string>
+    <string name="haveAcc">Already have an account?</string>
+    <string name="login"><u>Login</u></string>
+
     <!-- String For Login Fragment -->
+    <string name="sign_up">Sign Up</string>
     <string name="btn_login">Login</string>
     <string name="welcomeBack">Welcome Back</string>
     <string name="loginAccount">Login Into Your Account</string>
@@ -27,7 +36,7 @@
     <string name="dontHaveAcc">Doesn\'t have an account?</string>
     <string name="btn_signUp"><u>Sign Up</u></string>
 
-    <!-- String For Homepage Fragment-->
+    <!-- String For Homepage Fragment -->
     <string name="employee_name">Employee Name</string>
     <string name="employee_position">Employee Position</string>
     <string name="attendance">Attendance</string>
@@ -41,6 +50,16 @@
     <string name="time">0 Hours</string>
     <string name="announcement">Announcement</string>
     <string name="all">View All</string>
+    <string name="descAnnouncement">Announcement\nin Here</string>
+    <string name="dateAnnouncement">Date in Here</string>
 
+    <!-- String For Attendance Fragment -->
+    <string name="date">May 2022</string>
+    <string name="req_attendace">Request Attendance</string>
+
+    <!-- String For Attendance Recycler View -->
+    <string name="example_date_detail">1 May 2022</string>
+    <string name="example_clock_in">08.55</string>
+    <string name="example_clock_out">17.02</string>
 
 </resources>

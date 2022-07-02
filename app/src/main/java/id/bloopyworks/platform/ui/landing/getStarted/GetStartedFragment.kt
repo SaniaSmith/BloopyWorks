@@ -52,7 +52,7 @@ class GetStartedFragment : Fragment(), View.OnClickListener {
             binding?.btnGetStarted -> {
                 parentFragment?.requireView()?.let {
                     //navigate to show sign up
-                    Navigation.findNavController(it).navigate(R.id.signUpDialogFragment)
+                    Navigation.findNavController(it).navigate(R.id.signUpFragment)
 
                 }
             }

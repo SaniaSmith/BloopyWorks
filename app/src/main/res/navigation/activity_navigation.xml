@@ -20,6 +20,9 @@
         <action
             android:id="@+id/homepage_to_emailVerif"
             app:destination="@id/emailVerifFragment" />
+        <action
+            android:id="@+id/homepageFragment_to_attendanceFragment"
+            app:destination="@id/attendanceFragment" />
     </fragment>
 
     <fragment
@@ -31,11 +34,11 @@
             android:id="@+id/getStarted_to_login"
             app:destination="@id/loginFragment" />
         <action
-            android:id="@+id/getStarted_to_signUp"
-            app:destination="@id/signUpDialogFragment" />
-        <action
             android:id="@+id/getStarted_to_homepage"
             app:destination="@id/homepageFragment" />
+        <action
+            android:id="@+id/getStartedFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment" />
     </fragment>
 
     <fragment
@@ -44,21 +47,30 @@
         android:label="fragment_login"
         tools:layout="@layout/fragment_login" >
         <action
-            android:id="@+id/login_to_signUp"
-            app:destination="@id/signUpDialogFragment" />
-        <action
             android:id="@+id/login_to_homepage"
             app:destination="@id/homepageFragment"/>
+        <action
+            android:id="@+id/loginFragment_to_signUpFragment"
+            app:destination="@id/signUpFragment" />
     </fragment>
 
-    <fragment
-        android:id="@+id/signUpDialogFragment"
-        android:name="id.bloopyworks.platform.ui.landing.signUp.SignUpDialogFragment"
-        android:label="fragment_sign_up_dialog"
-        tools:layout="@layout/fragment_sign_up_dialog" />
     <fragment
         android:id="@+id/emailVerifFragment"
         android:name="id.bloopyworks.platform.ui.landing.emailVerif.EmailVerifFragment"
         android:label="EmailVerifFragment" />
+    <fragment
+        android:id="@+id/signUpFragment"
+        android:name="id.bloopyworks.platform.ui.landing.signUp.SignUpFragment"
+        android:label="fragment_sign_up"
+        tools:layout="@layout/fragment_sign_up" >
+        <action
+            android:id="@+id/signUpFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/attendanceFragment"
+        android:name="id.bloopyworks.platform.ui.mainscreen.homepage.attendance.AttendanceFragment"
+        android:label="fragment_attendance"
+        tools:layout="@layout/fragment_attendance" />
 
 </navigation>

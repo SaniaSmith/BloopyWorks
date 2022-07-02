@@ -46,8 +46,8 @@ class HomepageFragment : Fragment(), View.OnClickListener {
         when (view) {
             binding?.btnAttendance -> {
                 parentFragment?.requireView()?.let {
-                    //navigate to show sign up
-                    Navigation.findNavController(it).navigate(R.id.signUpDialogFragment)
+                    //navigate to show attendance fragment
+                    Navigation.findNavController(it).navigate(R.id.attendanceFragment)
 
                 }
             }
@@ -55,7 +55,7 @@ class HomepageFragment : Fragment(), View.OnClickListener {
             binding?.btnEarly -> {
                 parentFragment?.requireView()?.let {
                     //navigate to show login
-                    Navigation.findNavController(it).navigate(R.id.signUpDialogFragment)
+                    Navigation.findNavController(it).navigate(R.id.signUpFragment)
                 }
             }
         }

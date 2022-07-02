@@ -56,7 +56,7 @@ class LoginFragment : Fragment(), View.OnClickListener {
             binding?.btnSignUp -> {
                 parentFragment?.requireView()?.let {
                     //navigate to show dialog sign up
-                    Navigation.findNavController(it).navigate(R.id.signUpDialogFragment)
+                    Navigation.findNavController(it).navigate(R.id.signUpFragment)
                 }
             }
         }
