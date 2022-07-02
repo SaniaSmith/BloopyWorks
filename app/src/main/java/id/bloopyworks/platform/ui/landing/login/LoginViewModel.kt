@@ -6,6 +6,7 @@ import id.bloopyworks.platform.core.data.bloopyRepository
 import id.bloopyworks.platform.core.data.source.local_datastore.DataStoreRepository
 import id.bloopyworks.platform.core.data.source.remote.network.ResponseModel
 import id.bloopyworks.platform.core.data.source.remote.request.LoginAPIRequest
+import id.bloopyworks.platform.core.data.source.remote.response.GetAuthenticationUserResponse
 import id.bloopyworks.platform.core.data.source.remote.response.LoginAPIResponse
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -21,6 +22,7 @@ class LoginViewModel(
 
     val data =
         MutableStateFlow<ResponseModel<Response<LoginAPIResponse>>>(ResponseModel.Idle("Idle State"))
+    val responseAuthenticationUser = MutableStateFlow<ResponseModel<Response<GetAuthenticationUserResponse>>>(ResponseModel.Idle("Idle State"))
 
     suspend fun login(request: LoginAPIRequest) {
         data.emit(ResponseModel.Loading())
@@ -30,6 +32,19 @@ class LoginViewModel(
                     data.emit(ResponseModel.Success(it))
                 } else {
                     data.emit(ResponseModel.Error(it.message()))
+                }
+            }
+        }
+    }
+
+    suspend fun authenticationUser(token: String) {
+        responseAuthenticationUser.emit(ResponseModel.Loading())
+        repo.authenticationUser(token).collect {
+            viewModelScope.launch {
+                if (it.isSuccessful) {
+                    responseAuthenticationUser.emit(ResponseModel.Success(it))
+                } else {
+                    responseAuthenticationUser.emit(ResponseModel.Error(it.message()))
                 }
             }
         }

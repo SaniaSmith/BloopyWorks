@@ -1,5 +1,6 @@
 package id.bloopyworks.platform.ui.landing.login
 
+import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -101,6 +102,7 @@ class LoginFragment : Fragment(), View.OnClickListener {
                                 val token = it.data.body()?.data?.token
                                 if (token != null) {
                                     //stored token
+                                    saveLocalToken(token)
                                     viewModel.saveTokenKey(token)
 
                                     //navigate to HomepageFragment layout
@@ -120,6 +122,13 @@ class LoginFragment : Fragment(), View.OnClickListener {
                 }
             }
         }
+    }
+
+    private fun saveLocalToken(token: String) {
+        val sharedPref = context?.getSharedPreferences("token", 0)
+        val editor: SharedPreferences.Editor = sharedPref!!.edit()
+        editor.putString("tokenBody", token)
+        editor.apply()
     }
 
     private fun showDialog() {

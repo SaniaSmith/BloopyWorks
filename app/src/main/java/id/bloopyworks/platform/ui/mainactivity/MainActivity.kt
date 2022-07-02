@@ -2,7 +2,10 @@ package id.bloopyworks.platform.ui.mainactivity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.View
+import android.widget.Toast
 import androidx.navigation.NavController
 import androidx.navigation.NavGraph
 import androidx.navigation.NavInflater
@@ -21,6 +24,7 @@ class MainActivity : AppCompatActivity() {
     private val viewModel by viewModel<MainActivityViewModel>()
 
     private var tokenIsAvailable: Boolean = false
+    private var doubleBackToExitPressedOnce: Boolean = false
 
     //From Stack Overflow
     private lateinit var navHostFragment: NavHostFragment
@@ -52,5 +56,18 @@ class MainActivity : AppCompatActivity() {
             //if else navigate to GetStarted layout
             graph.startDestination = R.id.getStartedFragment
         }
+    }
+
+    override fun onBackPressed() {
+        if (doubleBackToExitPressedOnce) {
+            super.onBackPressed()
+            finishAffinity()
+        }
+        this.doubleBackToExitPressedOnce = true
+        Toast.makeText(this, "Click twice to exit", Toast.LENGTH_SHORT).show()
+        Handler(Looper.getMainLooper()).postDelayed(
+            { doubleBackToExitPressedOnce = false },
+            3000
+        )
     }
 }

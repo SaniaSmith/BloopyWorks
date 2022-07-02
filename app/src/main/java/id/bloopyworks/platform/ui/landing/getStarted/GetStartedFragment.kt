@@ -36,6 +36,8 @@ class GetStartedFragment : Fragment(), View.OnClickListener {
     ): View? {
         // Inflate the layout for this fragment
         _binding = FragmentGetStartedBinding.inflate(inflater, container, false)
+        val sharedPref = context?.getSharedPreferences("token", 0)
+        token = sharedPref?.getString("tokenBody", "").toString()
         return binding?.root
     }
 
@@ -58,9 +60,16 @@ class GetStartedFragment : Fragment(), View.OnClickListener {
             }
 
             binding?.btnContinue -> {
-                parentFragment?.requireView()?.let {
-                    //navigate to show sign up
-                    Navigation.findNavController(it).navigate(R.id.loginFragment)
+                if(token != "") {
+                    parentFragment?.requireView()?.let {
+                        //navigate to show sign up
+                        Navigation.findNavController(it).navigate(R.id.homepageFragment)
+                    }
+                } else {
+                    parentFragment?.requireView()?.let {
+                        //navigate to show sign up
+                        Navigation.findNavController(it).navigate(R.id.loginFragment)
+                    }
                 }
             }
         }

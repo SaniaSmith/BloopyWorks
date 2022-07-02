@@ -30,7 +30,7 @@ class RemoteDataSource(
     suspend fun authenticationUser(token: String) : Flow<Response<GetAuthenticationUserResponse>> {
         return flow<Response<GetAuthenticationUserResponse>> {
             try {
-                val response = apiService.authenticationUser(token)
+                val response = apiService.authenticationUser("Bearer $token")
                 emit(response)
             } catch (e: java.lang.Exception) {
                 Log.e("REMOTE", "Error: ${e.message}")
