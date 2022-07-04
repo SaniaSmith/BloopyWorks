@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.mainscreen.homepage.early.ReqEarlyActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@color/blue">
+
+            <Button
+                android:id="@+id/btn_backArrow7"
+                android:layout_width="45dp"
+                android:layout_height="47dp"
+                android:layout_marginStart="20dp"
+                android:backgroundTint="@color/blue"
+                android:drawableTop="@drawable/ic_back_arrow"
+                android:drawableTint="@color/white"
+                app:cornerRadius="180dp"/>
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="30dp"
+                android:layout_marginTop="9dp"
+                android:layout_toEndOf="@+id/btn_backArrow7"
+                android:fontFamily="@font/montserrat_semi_bold"
+                android:text="@string/req_early"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+        </RelativeLayout>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_gravity="center"
+            app:cardCornerRadius="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="380dp"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:id="@+id/date_reqEarly"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="70dp"
+                        android:layout_marginTop="15dp"
+                        android:fontFamily="@font/montserrat_light"
+                        android:text="@string/little_date"
+                        android:textColor="@color/black"
+                        android:textSize="14sp" />
+
+                    <Button
+                        android:id="@+id/btn_date_dropdown_early"
+                        style="?android:spinnerStyle"
+                        android:layout_width="351dp"
+                        android:layout_height="58dp"
+                        android:layout_below="@+id/date_reqEarly"
+                        android:layout_marginHorizontal="15dp"
+                        android:layout_marginTop="-15dp"
+                        android:layout_marginBottom="20dp"
+                        android:backgroundTint="@color/transparent"
+                        android:drawableLeft="@drawable/ic_calender_gray"
+                        android:drawablePadding="10dp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:paddingLeft="15dp"
+                        android:paddingRight="15dp"
+                        android:text="@string/choose_date"
+                        android:textColor="@color/black"
+                        android:textSize="20sp" />
+
+                    <TextView
+                        android:id="@+id/schedule_in"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/btn_date_dropdown_early"
+                        android:layout_marginStart="180dp"
+                        android:layout_marginTop="-20dp"
+                        android:layout_marginBottom="10dp"
+                        android:fontFamily="@font/montserrat_light"
+                        android:text="@string/in_schedule"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/btn_date_dropdown_early"
+                        android:layout_marginStart="18dp"
+                        android:layout_marginTop="-20dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_toEndOf="@+id/schedule_in"
+                        android:fontFamily="@font/montserrat_light"
+                        android:text="@string/out_schedule"
+                        android:textAlignment="center"
+                        android:textColor="@color/black"
+                        android:textSize="13sp" />
+
+                </RelativeLayout>
+
+                <LinearLayout
+                    android:id="@+id/expandableLayout"
+                    android:layout_width="380dp"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:visibility="gone">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Leaving Early"
+                        android:textSize="13sp"
+                        android:fontFamily="@font/montserrat_regular"
+                        android:layout_marginStart="85dp"
+                        android:layout_marginTop="20dp"
+                        android:textColor="@color/black"/>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginBottom="40dp">
+
+                        <ImageView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="25dp"
+                            android:layout_marginTop="3dp"
+                            android:src="@drawable/ic_clock"/>
+
+                        <RelativeLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content">
+
+                            <TextView
+                                android:id="@+id/tv_leavingAt"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="30dp"
+                                android:fontFamily="@font/montserrat_regular"
+                                android:text="At"
+                                android:textColor="@color/black"
+                                android:textSize="12sp" />
+
+                            <TextView
+                                android:id="@+id/tv_hoursLeaving"
+                                android:layout_width="50dp"
+                                android:layout_height="wrap_content"
+                                android:layout_below="@+id/tv_leavingAt"
+                                android:layout_marginStart="20dp"
+                                android:layout_marginTop="0dp"
+                                android:fontFamily="@font/montserrat_regular"
+                                android:gravity="center"
+                                android:text="13.00"
+                                android:textColor="@color/black"
+                                android:textSize="12sp" />
+
+
+                        </RelativeLayout>
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_gravity="center"
+            app:cardCornerRadius="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_desc"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="30dp"
+                    android:layout_marginStart="20dp"
+                    android:fontFamily="@font/montserrat_light"
+                    android:text="@string/reason"
+                    android:textColor="@color/black"
+                    android:textSize="13sp"/>
+
+                <EditText
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="3dp"
+                    android:fontFamily="@font/montserrat_light"
+                    android:background="@color/transparent"
+                    android:lines="1"
+                    android:maxLines="10"
+                    android:text="@string/early_reason"
+                    android:textColor="@color/black"
+                    android:textSize="13sp"
+                    android:layout_marginBottom="50dp"/>
+
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <Button
+            android:id="@+id/btn_req_early"
+            android:layout_width="340dp"
+            android:layout_height="68dp"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="@color/blue"
+            android:fontFamily="@font/montserrat_medium"
+            android:letterSpacing="0"
+            android:textAllCaps="false"
+            android:text="@string/req_early"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:cornerRadius="20dp"
+            android:layout_gravity="center"/>
+
+        <Button
+            android:id="@+id/btn_cancel_early"
+            android:layout_width="340dp"
+            android:layout_height="68dp"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="10dp"
+            android:backgroundTint="@color/button_light"
+            android:fontFamily="@font/montserrat_medium"
+            android:letterSpacing="0"
+            android:textAllCaps="false"
+            android:text="@string/cancel"
+            android:textColor="@color/blue"
+            android:textSize="20sp"
+            app:cornerRadius="20dp"
+            android:layout_gravity="center"/>
+
+    </LinearLayout>
+
+</ScrollView>

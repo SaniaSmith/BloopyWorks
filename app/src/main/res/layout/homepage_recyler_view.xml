@@ -5,7 +5,7 @@
     android:id="@+id/homepage_card_view"
     android:layout_marginTop="2dp"
     android:background="@color/transparent"
-    style="@style/Widget.Material3.CardView.Outlined">
+    style="@style/Widget.MaterialComponents.CardView">
 
     <LinearLayout
         android:id="@+id/homepage_card_linear"

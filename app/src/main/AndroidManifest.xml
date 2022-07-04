@@ -14,6 +14,36 @@
         android:theme="@style/Theme.BloopyWorks"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".ui.mainscreen.homepage.livelocation.LiveLocationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.mainscreen.homepage.early.RequestEarlyActivityActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.mainscreen.homepage.timeoff.ReqTimeoffActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.mainscreen.homepage.timeoff.TimeoffActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.mainscreen.homepage.overtime.ReqOvertimeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.mainscreen.homepage.overtime.OvertimeMainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.mainscreen.homepage.early.ReqEarlyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.mainscreen.homepage.early.EarlyActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.mainscreen.homepage.attendance.RequestAttendanceActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.mainscreen.homepage.attendance.AttendanceActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.landing.splashScreen.SplashScreenActivity"
             android:exported="true">
             <intent-filter>
@@ -24,7 +54,7 @@
         </activity>
         <activity
             android:name=".ui.mainactivity.MainActivity"
-            android:exported="false"/>
+            android:exported="false" />
     </application>
 
 </manifest>

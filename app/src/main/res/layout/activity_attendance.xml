@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.mainscreen.homepage.attendance.AttendanceActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@color/blue">
+
+            <Button
+                android:id="@+id/btn_backArrow"
+                style="@style/Widget.AppCompat.Button.Borderless"
+                android:layout_width="45dp"
+                android:layout_height="47dp"
+                android:layout_marginStart="20dp"
+                android:backgroundTint="@color/transparent"
+                android:drawableTop="@drawable/ic_back_arrow"
+                android:drawableTint="@color/white"
+                app:cornerRadius="180dp" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="75dp"
+                android:layout_marginTop="9dp"
+                android:layout_toEndOf="@+id/btn_backArrow"
+                android:fontFamily="@font/montserrat_semi_bold"
+                android:text="@string/attendance"
+                android:textColor="@color/white"
+                android:textSize="20sp" />
+
+        </RelativeLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_month_dropdown"
+            style="?android:spinnerStyle"
+            android:layout_width="351dp"
+            android:layout_height="58dp"
+            android:layout_marginHorizontal="30dp"
+            android:layout_marginVertical="20dp"
+            app:cornerRadius="20dp"
+            app:strokeWidth="0.5dp"
+            app:strokeColor="@color/black"
+            android:drawableLeft="@drawable/ic_calender_gray"
+            android:drawablePadding="10dp"
+            android:fontFamily="@font/montserrat_medium"
+            android:paddingLeft="15dp"
+            android:paddingRight="15dp"
+            android:text="@string/date"
+            android:textColor="@color/black"
+            android:textSize="20sp" />
+
+        <Button
+            android:id="@+id/btn_req_early"
+            android:layout_width="340dp"
+            android:layout_height="68dp"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="-10dp"
+            android:backgroundTint="@color/blue"
+            android:fontFamily="@font/montserrat_medium"
+            android:letterSpacing="0"
+            android:textAllCaps="false"
+            android:text="@string/req_attendance"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:cornerRadius="20dp"
+            android:layout_gravity="center"/>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/attendanceRecyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="15dp"
+            android:layout_marginHorizontal="5dp"/>
+
+    </LinearLayout>
+
+</ScrollView>

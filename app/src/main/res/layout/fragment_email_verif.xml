@@ -1,14 +1,205 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ui.landing.emailVerif.EmailVerifFragment">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.landing.emailVerif.EmailVerifFragment"
+    android:orientation="vertical"
+    android:id="@+id/linearLayoutRoot">
 
-    <!-- TODO: Update blank fragment layout -->
+    <Button
+        android:id="@+id/btn_backArrowEmail"
+        android:layout_width="45dp"
+        android:layout_height="47dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="28dp"
+        android:backgroundTint="@color/button_light"
+        app:cornerRadius="180dp"
+        android:drawableTop="@drawable/ic_back_arrow"
+        android:drawableTint="@color/black"/>
+
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:id="@+id/verificationEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="25dp"
+        android:fontFamily="@font/montserrat_medium"
+        android:text="@string/verif"
+        android:textColor="@color/black"
+        android:textSize="25sp"/>
 
-</FrameLayout>
+    <TextView
+        android:id="@+id/descVerificationEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="3dp"
+        android:fontFamily="@font/montserrat_regular"
+        android:text="@string/verif_desc"
+        android:textColor="@color/black"
+        android:textSize="14sp"/>
+
+    <TextView
+        android:id="@+id/emailForVerification"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="5dp"
+        android:fontFamily="@font/montserrat_regular"
+        android:text="@string/example_email"
+        android:textColor="@color/black"
+        android:textSize="17sp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="63dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal">
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="75dp"
+            android:layout_height="80dp"
+            android:layout_below="@+id/ti_code1"
+            app:boxStrokeColor="@color/transparent">
+
+            <EditText
+                android:id="@+id/codeNumber1"
+                android:layout_width="75dp"
+                android:layout_height="80dp"
+                android:background="@color/button_light"
+                android:gravity="center"
+                android:maxLength="1"
+                android:ems="10"
+                android:text="2"
+                android:layout_gravity="center_vertical"
+                android:fontFamily="@font/montserrat_medium"
+                android:inputType="number"
+                android:textColor="@color/black"
+                android:textSize="40sp"  />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="75dp"
+            android:layout_height="80dp"
+            android:layout_below="@+id/ti_code1"
+            app:boxStrokeColor="@color/transparent">
+
+            <EditText
+                android:id="@+id/codeNumber2"
+                android:layout_width="75dp"
+                android:layout_height="80dp"
+                android:background="@color/button_light"
+                android:gravity="center"
+                android:maxLength="1"
+                android:ems="10"
+                android:text="2"
+                android:layout_gravity="center_vertical"
+                android:fontFamily="@font/montserrat_medium"
+                android:inputType="number"
+                android:textColor="@color/black"
+                android:textSize="40sp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="75dp"
+            android:layout_height="80dp"
+            android:layout_below="@+id/ti_code1"
+            app:boxStrokeColor="@color/transparent">
+
+            <EditText
+                android:id="@+id/codeNumber3"
+                android:layout_width="75dp"
+                android:layout_height="80dp"
+                android:background="@color/button_light"
+                android:gravity="center"
+                android:maxLength="1"
+                android:ems="10"
+                android:text="2"
+                android:layout_gravity="center_vertical"
+                android:fontFamily="@font/montserrat_medium"
+                android:inputType="number"
+                android:textColor="@color/black"
+                android:textSize="40sp"  />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="75dp"
+            android:layout_height="80dp"
+            android:layout_below="@+id/ti_code1"
+            app:boxStrokeColor="@color/transparent">
+
+            <EditText
+                android:id="@+id/codeNumber4"
+                android:layout_width="75dp"
+                android:layout_height="80dp"
+                android:background="@color/button_light"
+                android:gravity="center"
+                android:maxLength="1"
+                android:ems="10"
+                android:text="2"
+                android:layout_gravity="center_vertical"
+                android:fontFamily="@font/montserrat_medium"
+                android:inputType="number"
+                android:textColor="@color/black"
+                android:textSize="40sp"  />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <TextView
+            android:id="@+id/getCode"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="5dp"
+            android:fontFamily="@font/montserrat_regular"
+            android:text="@string/resend_code"
+            android:textColor="@color/black"
+            android:textSize="13sp" />
+
+        <Button
+            android:id="@+id/btn_resend"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="-18dp"
+            android:layout_marginTop="-2dp"
+            android:layout_toEndOf="@+id/getCode"
+            android:background="@color/transparent"
+            android:backgroundTint="@color/transparent"
+            android:fontFamily="@font/montserrat_regular"
+            android:letterSpacing="0"
+            android:text="@string/resend"
+            android:textAllCaps="false"
+            android:textColor="@color/blue_text"
+            android:textSize="13sp" />
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/btn_Login"
+        android:layout_width="238dp"
+        android:layout_height="68dp"
+        android:layout_centerInParent="true"
+        android:layout_marginTop="30dp"
+        android:backgroundTint="@color/button_light"
+        android:fontFamily="@font/montserrat_medium"
+        android:letterSpacing="0"
+        android:text="@string/btn_login"
+        android:textColor="@color/blue"
+        android:textSize="20sp"
+        app:cornerRadius="20dp"
+        android:layout_gravity="center"/>
+
+</LinearLayout>

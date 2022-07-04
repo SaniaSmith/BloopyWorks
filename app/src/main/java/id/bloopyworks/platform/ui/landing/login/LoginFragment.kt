@@ -2,6 +2,7 @@ package id.bloopyworks.platform.ui.landing.login
 
 import android.content.SharedPreferences
 import android.os.Bundle
+import android.text.Editable
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -95,26 +96,37 @@ class LoginFragment : Fragment(), View.OnClickListener {
                         is ResponseModel.Success -> {
                             dismissDialog()
 
-                            if (it.data?.body()?.data == null) {
+                            if (it.data?.body()?.status == null) {
                                 Toast.makeText(requireContext(), "Data tidak tersedia", Toast.LENGTH_SHORT).show()
                             } else {
-                                Toast.makeText(requireContext(), "Login berhasil", Toast.LENGTH_SHORT).show()
                                 val token = it.data.body()?.data?.token
+                                val email = binding?.edtEmail?.text.toString()
+                                val isVerif = it.data.body()?.data?.isVerified
                                 if (token != null) {
                                     //stored token
                                     saveLocalToken(token)
+                                    saveEmail(email)
                                     viewModel.saveTokenKey(token)
+                                    if (isVerif != null) {
+                                        saveIsVerified(isVerif)
+                                    }
 
-                                    //navigate to HomepageFragment layout
-                                    val navOptions = NavOptions.Builder()
-                                        .setPopUpTo(R.id.homepageFragment, true)
-                                        .build()
-                                    val action = LoginFragmentDirections.loginToHomepage()
-                                    findNavController().navigate(action, navOptions)
-
+                                    if (isVerif == true) {
+                                        Toast.makeText(requireContext(), "Login Berhasil", Toast.LENGTH_SHORT).show()
+                                        // Navigate to Homepage
+                                        val navOptions = NavOptions.Builder().setPopUpTo(R.id.homepageFragment, true).build()
+                                        val action = LoginFragmentDirections.loginToHomepage()
+                                        findNavController().navigate(action, navOptions)
+                                    } else if (isVerif == false) {
+                                        Toast.makeText(requireContext(), "Tolong Verif Email Terlebih Dahulu", Toast.LENGTH_SHORT).show()
+                                        //Navigate to email verif
+                                        val navOptions = NavOptions.Builder().setPopUpTo(R.id.emailVerifFragment, true).build()
+                                        val action = LoginFragmentDirections.loginFragmentToEmailVerifFragment()
+                                        findNavController().navigate(action, navOptions)
+                                    }
 
                                 } else {
-                                    Toast.makeText(requireContext(), "Token tidak tersedia", Toast.LENGTH_SHORT).show()
+                                    Toast.makeText(requireContext(), "Token Tidak Tersedia", Toast.LENGTH_SHORT).show()
                                 }
                             }
                         }
@@ -124,11 +136,25 @@ class LoginFragment : Fragment(), View.OnClickListener {
         }
     }
 
+    private fun saveEmail(email: String) {
+        val sharedPref = context?.getSharedPreferences("email", 0)
+        val editor: SharedPreferences.Editor = sharedPref!!.edit()
+        editor.putString("emailUser", email)
+        editor.apply()
+    }
+
     private fun saveLocalToken(token: String) {
         val sharedPref = context?.getSharedPreferences("token", 0)
         val editor: SharedPreferences.Editor = sharedPref!!.edit()
         editor.putString("tokenBody", token)
         editor.apply()
+    }
+
+    private fun saveIsVerified(verif: Boolean) {
+        val sharedPref = context?.getSharedPreferences("verifed", 0)
+        val editor: SharedPreferences.Editor = sharedPref!!.edit()
+        editor.putBoolean("verifiedBody", verif)
+        editor.commit()
     }
 
     private fun showDialog() {

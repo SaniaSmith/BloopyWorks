@@ -9,4 +9,10 @@ object Constant {
 
     // DATASTORE KEY
     const val TOKEN_KEY = "token_key"
+
+    // DATASTORE KEY VERIF
+    const val TOKEN_VERIF = "token_verif"
+
+    // DATASTORE USER ID
+    const val TOKEN_USERID = "user_id"
 }

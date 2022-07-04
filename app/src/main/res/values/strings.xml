@@ -26,6 +26,13 @@
     <string name="haveAcc">Already have an account?</string>
     <string name="login"><u>Login</u></string>
 
+    <!-- String For Email Verification -->
+    <string name="verif">Verification Email</string>
+    <string name="verif_desc">Please enter the code that we send to your email</string>
+    <string name="example_email">email@gmail.com</string>
+    <string name="resend_code">Doesn\'t get the code?</string>
+    <string name="resend"><u>Resend</u></string>
+
     <!-- String For Login Fragment -->
     <string name="sign_up">Sign Up</string>
     <string name="btn_login">Login</string>
@@ -45,7 +52,6 @@
     <string name="loc">Live Location</string>
     <string name="off">Time Off</string>
     <string name="pay_slip">My Payslip</string>
-    <string name="req">Request</string>
     <string name="card_early">Early</string>
     <string name="time">0 Hours</string>
     <string name="announcement">Announcement</string>
@@ -53,13 +59,71 @@
     <string name="descAnnouncement">Announcement\nin Here</string>
     <string name="dateAnnouncement">Date in Here</string>
 
-    <!-- String For Attendance Fragment -->
+    <!-- String For Requesting -->
+    <string name="req">Request</string>
+    <string name="cancel">Cancel</string>
+
+    <!-- String For Attendance Activity -->
     <string name="date">May 2022</string>
-    <string name="req_attendace">Request Attendance</string>
+    <string name="req_attendance">Request Attendance</string>
 
     <!-- String For Attendance Recycler View -->
     <string name="example_date_detail">1 May 2022</string>
     <string name="example_clock_in">08.55</string>
     <string name="example_clock_out">17.02</string>
+    <string name="atttendance_reason">Maaf, saya lupa untuk melakukan clock in dan\nclock out pada tanggal 3 May ini.</string>
+
+    <!-- String For Early Activity -->
+    <string name="req_early">Request Go Home Early</string>
+    <string name="early_detail">Go Home Early that has been Taken</string>
+
+    <!-- String For Req Early Activity -->
+    <string name="little_date">Date</string>
+    <string name="choose_date">Choose Date</string>
+    <string name="in_schedule">Schedule In\n09.00</string>
+    <string name="out_schedule">Schedule Out\n17.00</string>
+    <string name="reason">Reason</string>
+    <string name="early_reason">Enter the reason for requesting early leave</string>
+
+    <!-- String For Request Overtime Activity -->
+    <string name="req_overtime">Request Overtime</string>
+    <string name="overtime_detail">Overtime that has been Taken</string>
+    <string name="overtime_hours">Overtime Hours</string>
+    <string name="hours">Hours</string>
+    <string name="minute">Minute</string>
+    <string name="break_before_overtime">Break Before Overtime</string>
+    <string name="compensation_type">Compensation Type</string>
+    <string name="paid_overtime">Paid for overtime in accordance to my overtime hours.</string>
+    <string name="desc">Description</string>
+    <string name="overtime_reason">Enter the reason for requesting overtime</string>
+
+    <!-- String For Req Time Off -->
+    <string name="type">Time Off Type</string>
+    <string name="req_type">Request Type</string>
+    <string name="start_date">Date Start Time Off</string>
+    <string name="end_date">Date End Time Off</string>
+    <string name="req_timeOff">Request Time Off</string>
+
+    <!-- String For Dropdown Cuti -->
+    <string-array name="time_off">
+        <item>\nSelect Time Off Type</item>
+        <item>\nCuti Tahunan</item>
+        <item>\nCuti Sakit</item>
+        <item>\nCuti Melahirkan</item>
+        <item>\nCuti Besar</item>
+        <item>\nCuti Karena Urusan Penting</item>
+    </string-array>
+
+    <!-- String For Dropdown Lama Cuti -->
+    <string-array name="req_time_off">
+        <item>\nSelect Request Type</item>
+        <item>\nHalf Day</item>
+        <item>\nFull Day</item>
+    </string-array>
+
+    <!-- String For Live Locaation Activity -->
+    <string name="clock_in">Clock In</string>
+    <string name="clock_out">Clock Out</string>
+
 
 </resources>

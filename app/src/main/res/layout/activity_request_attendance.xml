@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.mainscreen.homepage.attendance.RequestAttendanceActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="@color/blue">
+
+            <ImageButton
+                android:id="@+id/btn_backArrow5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:backgroundTint="@color/transparent"
+                app:srcCompat="@drawable/ic_back_arrow"
+                app:tint="#FFFFFF" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="40dp"
+                android:layout_marginTop="9dp"
+                android:fontFamily="@font/montserrat_semi_bold"
+                android:text="@string/req_attendance"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:layout_toEndOf="@+id/btn_backArrow5"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="380dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/round_edge"
+            android:layout_gravity="center">
+
+            <TextView
+                android:id="@+id/date_reqAttendance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="67dp"
+                android:layout_marginTop="15dp"
+                android:fontFamily="@font/montserrat_light"
+                android:text="Date"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <Button
+                android:id="@+id/btn_date_dropdown"
+                style="?android:spinnerStyle"
+                android:layout_width="351dp"
+                android:layout_height="58dp"
+                android:layout_below="@+id/date_reqAttendance"
+                android:layout_marginHorizontal="15dp"
+                android:layout_marginTop="-15dp"
+                android:layout_marginBottom="20dp"
+                android:backgroundTint="@color/transparent"
+                android:drawableLeft="@drawable/ic_calender_gray"
+                android:drawablePadding="10dp"
+                android:fontFamily="@font/montserrat_medium"
+                android:paddingLeft="15dp"
+                android:paddingRight="15dp"
+                android:text="3 May 2022"
+                android:textColor="@color/black"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/schedule_in"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btn_date_dropdown"
+                android:layout_marginStart="180dp"
+                android:layout_marginTop="-20dp"
+                android:layout_marginBottom="10dp"
+                android:fontFamily="@font/montserrat_light"
+                android:text="Schedule In\n09.00"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="13sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/btn_date_dropdown"
+                android:layout_marginStart="18dp"
+                android:layout_marginTop="-20dp"
+                android:layout_marginBottom="10dp"
+                android:layout_toEndOf="@+id/schedule_in"
+                android:fontFamily="@font/montserrat_light"
+                android:text="Schedule Out\n17.00"
+                android:textAlignment="center"
+                android:textColor="@color/black"
+                android:textSize="13sp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="380dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/round_edge"
+            android:layout_marginTop="10dp"
+            android:layout_marginHorizontal="15dp"
+            android:layout_marginBottom="30dp">
+
+            <TextView
+                android:id="@+id/time_reqAttendance"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25dp"
+                android:layout_marginTop="30dp"
+                android:fontFamily="@font/montserrat_light"
+                android:text="Time"
+                android:textColor="@color/black"
+                android:textSize="13sp" />
+
+            <CheckBox
+                android:id="@+id/cb_clockIn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/time_reqAttendance"
+                android:layout_marginStart="19dp"
+                android:buttonTint="@color/grayDate"
+                android:checked="true"
+                android:fontFamily="@font/montserrat_light"
+                android:text="Clock In\n"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/edt_clockIn"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/cb_clockIn"
+                android:layout_marginStart="52dp"
+                android:layout_marginTop="-25dp"
+                android:background="@color/transparent"
+                android:fontFamily="@font/montserrat_light"
+                android:gravity="center"
+                android:text="08.50"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <CheckBox
+                android:id="@+id/cb_clockOut"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/time_reqAttendance"
+                android:layout_marginStart="70dp"
+                android:layout_toEndOf="@+id/cb_clockIn"
+                android:buttonTint="@color/grayDate"
+                android:checked="true"
+                android:fontFamily="@font/montserrat_light"
+                android:text="Clock Out\n"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <EditText
+                android:id="@+id/edt_clockOut"
+                android:layout_width="50dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/cb_clockIn"
+                android:layout_marginStart="110dp"
+                android:layout_marginTop="-25dp"
+                android:layout_toEndOf="@id/edt_clockIn"
+                android:background="@color/transparent"
+                android:fontFamily="@font/montserrat_light"
+                android:gravity="center"
+                android:text="17.10"
+                android:textColor="@color/black"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/edt_clockIn"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="40dp"
+                android:fontFamily="@font/montserrat_light"
+                android:text="Description"
+                android:textColor="@color/black"
+                android:textSize="13sp"/>
+
+            <EditText
+                android:id="@+id/edt_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_desc"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="50dp"
+                android:lines="2"
+                android:maxLines="10"
+                android:background="@color/transparent"
+                android:fontFamily="@font/montserrat_light"
+                android:text="@string/atttendance_reason"
+                android:textColor="@color/black"
+                android:textSize="13sp" />
+
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/btn_req_attendance"
+            android:layout_width="340dp"
+            android:layout_height="68dp"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="-10dp"
+            android:backgroundTint="@color/blue"
+            android:fontFamily="@font/montserrat_medium"
+            android:letterSpacing="0"
+            android:textAllCaps="false"
+            android:text="@string/req"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            app:cornerRadius="20dp"
+            android:layout_gravity="center"/>
+
+        <Button
+            android:id="@+id/btn_cancel"
+            android:layout_width="340dp"
+            android:layout_height="68dp"
+            android:layout_centerInParent="true"
+            android:layout_marginTop="-1dp"
+            android:backgroundTint="@color/button_light"
+            android:fontFamily="@font/montserrat_medium"
+            android:letterSpacing="0"
+            android:textAllCaps="false"
+            android:text="@string/cancel"
+            android:textColor="@color/blue"
+            android:textSize="20sp"
+            app:cornerRadius="20dp"
+            android:layout_gravity="center"/>
+
+    </LinearLayout>
+
+</ScrollView>

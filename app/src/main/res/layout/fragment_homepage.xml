@@ -16,6 +16,21 @@
             android:layout_height="415dp"
             android:background="@color/blue">
 
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_logout"
+                android:layout_width="100dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="-5dp"
+                android:layout_marginTop="-5dp"
+                android:backgroundTint="@color/transparent"
+                android:background="@color/transparent"
+                android:fontFamily="@font/montserrat_regular"
+                android:text="Logout"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="15sp"
+                android:letterSpacing="0"/>
+
             <TextView
                 android:id="@+id/appsname"
                 android:layout_width="wrap_content"

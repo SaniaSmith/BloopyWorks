@@ -20,8 +20,7 @@
             android:backgroundTint="@color/button_light"
             app:cornerRadius="180dp"
             android:drawableTop="@drawable/ic_back_arrow"
-            android:drawableTint="@color/black"
-            />
+            android:drawableTint="@color/black"/>
 
         <ImageView
             android:id="@+id/logo3"
@@ -64,26 +63,33 @@
                 android:layout_marginStart="32dp"
                 android:layout_marginTop="43dp"
                 android:src="@drawable/ic_email"
-                app:tint="@color/black"
-                />
+                app:tint="@color/black"/>
 
-            <EditText
-                android:id="@+id/edt_email"
-                android:layout_width="261dp"
-                android:layout_height="47dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="43dp"
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:layout_toEndOf="@+id/email3"
-                android:backgroundTint="@color/button_light"
-                android:ems="10"
-                android:fontFamily="@font/montserrat_medium"
-                android:hint="Enter your email"
-                android:inputType="textEmailAddress"
-                android:paddingLeft="15dp"
-                android:textColor="@color/black"
+                android:layout_marginTop="29dp"
                 android:textColorHint="@color/hint"
-                android:textSize="12sp"
-                app:cornerRadius="12dp" />
+                app:boxStrokeColor="@color/transparent">
+
+                <EditText
+                    android:id="@+id/edt_email"
+                    android:layout_width="261dp"
+                    android:layout_height="47dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="13dp"
+                    android:layout_toEndOf="@+id/email"
+                    android:background="@color/button_light"
+                    android:ems="10"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:hint="Email"
+                    android:inputType="textEmailAddress"
+                    android:paddingLeft="15dp"
+                    android:textColor="@color/black"
+                    android:textSize="12sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
 
         </RelativeLayout>
 
@@ -100,22 +106,32 @@
                 app:srcCompat="@drawable/ic_key"
                 app:tint="@color/black" />
 
-            <EditText
-                android:id="@+id/edt_pass"
-                android:layout_width="261dp"
-                android:layout_height="47dp"
-                android:layout_marginStart="20dp"
-                android:layout_marginTop="13dp"
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="wrap_content"
+                app:passwordToggleEnabled="true"
+                android:layout_height="wrap_content"
                 android:layout_toEndOf="@+id/pass3"
-                android:backgroundTint="@color/button_light"
-                android:ems="10"
-                android:fontFamily="@font/montserrat_medium"
-                android:hint="Enter your password"
-                android:inputType="textPassword"
-                android:paddingLeft="15dp"
-                android:textColor="@color/black"
-                android:textColorHint="@color/hint"
-                android:textSize="12sp" />
+                android:id="@+id/ti_inputPass"
+                android:textColorHint="@color/gray"
+                app:boxStrokeColor="@color/transparent">
+
+                <EditText
+                    android:id="@+id/edt_pass"
+                    android:layout_width="261dp"
+                    android:layout_height="47dp"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="13dp"
+                    android:background="@color/button_light"
+                    android:ems="10"
+                    android:fontFamily="@font/montserrat_medium"
+                    android:hint="Password"
+                    android:inputType="textPassword"
+                    android:paddingLeft="15dp"
+                    android:textColor="@color/black"
+                    android:textColorHint="@color/hint"
+                    android:textSize="12sp" />
+
+            </com.google.android.material.textfield.TextInputLayout>
 
         </RelativeLayout>
 

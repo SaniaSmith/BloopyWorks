@@ -8,6 +8,7 @@ import id.bloopyworks.platform.core.data.source.remote.network.ResponseModel
 import id.bloopyworks.platform.core.data.source.remote.request.LoginAPIRequest
 import id.bloopyworks.platform.core.data.source.remote.response.GetAuthenticationUserResponse
 import id.bloopyworks.platform.core.data.source.remote.response.LoginAPIResponse
+import id.bloopyworks.platform.core.data.source.remote.response.LoginApiNewResponse
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.collect
@@ -20,13 +21,30 @@ class LoginViewModel(
 
 ) : ViewModel() {
 
+//    val data =
+//        MutableStateFlow<ResponseModel<Response<LoginAPIResponse>>>(ResponseModel.Idle("Idle State"))
+//    val responseAuthenticationUser = MutableStateFlow<ResponseModel<Response<GetAuthenticationUserResponse>>>(ResponseModel.Idle("Idle State"))
+//
+//    suspend fun login(request: LoginAPIRequest) {
+//        data.emit(ResponseModel.Loading())
+//        repo.loginUser(request).collect() {
+//            viewModelScope.launch {
+//                if (it.isSuccessful) {
+//                    data.emit(ResponseModel.Success(it))
+//                } else {
+//                    data.emit(ResponseModel.Error(it.message()))
+//                }
+//            }
+//        }
+//    }
+
     val data =
-        MutableStateFlow<ResponseModel<Response<LoginAPIResponse>>>(ResponseModel.Idle("Idle State"))
+        MutableStateFlow<ResponseModel<Response<LoginApiNewResponse>>>(ResponseModel.Idle("Idle State"))
     val responseAuthenticationUser = MutableStateFlow<ResponseModel<Response<GetAuthenticationUserResponse>>>(ResponseModel.Idle("Idle State"))
 
     suspend fun login(request: LoginAPIRequest) {
         data.emit(ResponseModel.Loading())
-        repo.loginUser(request).collect() {
+        repo.loginUserNew(request).collect() {
             viewModelScope.launch {
                 if (it.isSuccessful) {
                     data.emit(ResponseModel.Success(it))

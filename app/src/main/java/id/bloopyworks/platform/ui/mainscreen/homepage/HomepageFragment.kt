@@ -17,11 +17,8 @@ import androidx.navigation.fragment.findNavController
 import id.bloopyworks.platform.R
 import id.bloopyworks.platform.core.data.source.remote.network.ResponseModel
 import id.bloopyworks.platform.core.utlis.collectIt
-import id.bloopyworks.platform.databinding.FragmentGetStartedBinding
 import id.bloopyworks.platform.databinding.FragmentHomepageBinding
-import id.bloopyworks.platform.ui.landing.getStarted.GetStartedFragmentDirections
-import id.bloopyworks.platform.ui.landing.getStarted.GetStartedViewModel
-import id.bloopyworks.platform.ui.landing.login.LoginFragmentDirections
+import id.bloopyworks.platform.ui.landing.emailVerif.EmailVerifFragmentDirections
 import id.bloopyworks.platform.ui.landing.login.LoginViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.collectLatest
@@ -33,6 +30,9 @@ class HomepageFragment : Fragment(), View.OnClickListener {
     private var _binding: FragmentHomepageBinding? = null
     private val binding get() = _binding
     private val viewModel by sharedViewModel<LoginViewModel>()
+    private val viewModelLogout by sharedViewModel<HomepageViewModel>()
+
+    private var token : String = ""
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -53,22 +53,57 @@ class HomepageFragment : Fragment(), View.OnClickListener {
         binding?.btnLiveloc?.setOnClickListener(this)
         binding?.btnTimeOff?.setOnClickListener(this)
         binding?.btnPaySlip?.setOnClickListener(this)
+        binding?.btnLogout?.setOnClickListener(this)
+
+        //get token
+        val sharedPrefToken = context?.getSharedPreferences("token", 0)
+        token = sharedPrefToken?.getString("tokenBody", "").toString()
     }
 
     override fun onClick(view: View?) {
         when (view) {
+            binding?.btnLogout -> {
+                if (token.isNotEmpty()) {
+                    logout()
+                } else {
+                    Toast.makeText(requireContext(), "Token tidak ada", Toast.LENGTH_SHORT).show()
+                }
+            }
+
             binding?.btnAttendance -> {
                 parentFragment?.requireView()?.let {
                     //navigate to show attendance fragment
-                    Navigation.findNavController(it).navigate(R.id.attendanceFragment)
+                    Navigation.findNavController(it).navigate(R.id.attendanceActivity)
 
                 }
             }
 
+            binding?.btnTimeOff -> {
+                parentFragment?.requireView()?.let {
+                    //navigate to show time off fragment
+                    Navigation.findNavController(it).navigate(R.id.timeoffActivity)
+                }
+            }
+
             binding?.btnEarly -> {
+                val navOptions = NavOptions.Builder()
+                    .setPopUpTo(R.id.homepageFragment, true).build()
+                val action =
+                    EmailVerifFragmentDirections.emailVerifFragmentToHomepageFragment()
+                findNavController().navigate(action, navOptions)
+            }
+
+            binding?.btnOvertime -> {
                 parentFragment?.requireView()?.let {
                     //navigate to show login
-                    Navigation.findNavController(it).navigate(R.id.signUpFragment)
+                    Navigation.findNavController(it).navigate(R.id.overtimeActivity)
+                }
+            }
+
+            binding?.btnLiveloc -> {
+                parentFragment?.requireView()?.let {
+                    //navigate to show login
+                    Navigation.findNavController(it).navigate(R.id.liveLocationActivity)
                 }
             }
         }
@@ -125,6 +160,53 @@ class HomepageFragment : Fragment(), View.OnClickListener {
 //                                editor.putString("user_identityExpiryDate", it.data.body()?.data?.userIdentityExpiryDate.toString())
 //                                editor.apply()
                             }
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+
+    private fun logout() {
+
+        //send request logout user
+        viewModelLogout.viewModelScope.launch {
+            viewModelLogout.logoutUser("Bearer ".plus(token))
+        }
+
+        //get response logout user
+        viewLifecycleOwner.lifecycleScope.launch {
+            viewLifecycleOwner.repeatOnLifecycle(Lifecycle.State.STARTED) {
+                viewModelLogout.responseLogout.collectLatest {
+                    when (it) {
+                        //when response is error
+                        is ResponseModel.Error -> {
+                            Toast.makeText(requireContext(), "Gagal: ${it.message}", Toast.LENGTH_SHORT).show()
+                        }
+                        //when response is idle
+                        is ResponseModel.Idle -> {
+                            Toast.makeText(requireContext(), "Idle State", Toast.LENGTH_SHORT).show()
+                        }
+                        //when response is loading
+                        is ResponseModel.Loading -> {
+                            showDialog()
+                        }
+                        //when response is success
+                        is ResponseModel.Success -> {
+                            Toast.makeText(requireContext(), "Berhasil Logout", Toast.LENGTH_SHORT).show()
+
+                            //delete stored token
+                            viewModelLogout.viewModelScope.launch(Dispatchers.Main) {
+                                viewModelLogout.deleteToken()
+                            }
+
+                            //navigate to HomeFragment layout
+                            val navOptions = NavOptions.Builder()
+                                .setPopUpTo(R.id.getStartedFragment, true)
+                                .build()
+                            val action = HomepageFragmentDirections.homepageFragmentToGetStartedFragment()
+                            findNavController().navigate(action, navOptions)
                         }
                     }
                 }

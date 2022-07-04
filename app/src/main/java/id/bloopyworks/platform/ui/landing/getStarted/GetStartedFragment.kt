@@ -29,6 +29,7 @@ class GetStartedFragment : Fragment(), View.OnClickListener {
     private val viewModel by sharedViewModel<GetStartedViewModel>()
 
     private var token : String = ""
+    private var verified : Boolean = true
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -36,8 +37,15 @@ class GetStartedFragment : Fragment(), View.OnClickListener {
     ): View? {
         // Inflate the layout for this fragment
         _binding = FragmentGetStartedBinding.inflate(inflater, container, false)
+
+        //get token from local storage
         val sharedPref = context?.getSharedPreferences("token", 0)
         token = sharedPref?.getString("tokenBody", "").toString()
+
+        //get verified from local storage
+        val sharedPrefVerif = context?.getSharedPreferences("verifed", 0)
+        verified = sharedPrefVerif?.getBoolean("verifiedBody", true) == true
+
         return binding?.root
     }
 
@@ -64,6 +72,14 @@ class GetStartedFragment : Fragment(), View.OnClickListener {
                     parentFragment?.requireView()?.let {
                         //navigate to show sign up
                         Navigation.findNavController(it).navigate(R.id.homepageFragment)
+
+                        if (verified) {
+                            //navigate to homepage
+                            Navigation.findNavController(it).navigate(R.id.homepageFragment)
+                        } else if (!verified){
+                            //navigate to email verif
+                            Navigation.findNavController(it).navigate(R.id.emailVerifFragment)
+                        }
                     }
                 } else {
                     parentFragment?.requireView()?.let {

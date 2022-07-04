@@ -18,18 +18,40 @@
         <entry key="..\:/Users/SANIA SMITH/AndroidStudioProjects/BloopyWorks/app/src/main/res/layout/fragment_homepage.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/SANIA SMITH/AndroidStudioProjects/BloopyWorks/app/src/main/res/layout/fragment_login_dialog.xml" value="0.22" />
         <entry key="..\:/Users/SANIA SMITH/AndroidStudioProjects/BloopyWorks/app/src/main/res/layout/fragment_sign_up_dialog.xml" value="0.14732547597461468" />
+        <entry key="..\:/Users/SANIA SMITH/AndroidStudioProjects/UAS FIX/BloopyWorks/app/src/main/res/drawable/ic_calender_gray.xml" value="0.1165" />
+        <entry key="..\:/Users/SANIA SMITH/AndroidStudioProjects/UAS FIX/BloopyWorks/app/src/main/res/drawable/ic_calender_gray_big.xml" value="0.1165" />
         <entry key="..\:/Users/SANIA SMITH/AndroidStudioProjects/UAS FIX/BloopyWorks/app/src/main/res/drawable/ic_person.xml" value="0.1" />
+        <entry key="..\:/Users/SANIA SMITH/AndroidStudioProjects/UAS FIX/BloopyWorks/app/src/main/res/drawable/ic_plus_square.xml" value="0.1045" />
+        <entry key="..\:/Users/SANIA SMITH/AndroidStudioProjects/UAS FIX/BloopyWorks/app/src/main/res/drawable/ic_work.xml" value="0.1165" />
+        <entry key="..\:/Users/SANIA SMITH/AndroidStudioProjects/UAS FIX/BloopyWorks/app/src/main/res/drawable/input.xml" value="0.152" />
+        <entry key="..\:/Users/SANIA SMITH/AndroidStudioProjects/UAS FIX/BloopyWorks/app/src/main/res/drawable/radius.xml" value="0.1435" />
+        <entry key="..\:/Users/SANIA SMITH/AndroidStudioProjects/UAS FIX/BloopyWorks/app/src/main/res/drawable/round_edge.xml" value="0.1045" />
+        <entry key="..\:/Users/SANIA SMITH/AndroidStudioProjects/UAS FIX/BloopyWorks/app/src/main/res/layout/activity_attendance.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/SANIA SMITH/AndroidStudioProjects/UAS FIX/BloopyWorks/app/src/main/res/layout/activity_early.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/SANIA SMITH/AndroidStudioProjects/UAS FIX/BloopyWorks/app/src/main/res/layout/activity_live_location.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/SANIA SMITH/AndroidStudioProjects/UAS FIX/BloopyWorks/app/src/main/res/layout/activity_main.xml" value="0.1" />
+        <entry key="..\:/Users/SANIA SMITH/AndroidStudioProjects/UAS FIX/BloopyWorks/app/src/main/res/layout/activity_overtime_main.xml" value="0.14666666666666667" />
+        <entry key="..\:/Users/SANIA SMITH/AndroidStudioProjects/UAS FIX/BloopyWorks/app/src/main/res/layout/activity_req_early.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/SANIA SMITH/AndroidStudioProjects/UAS FIX/BloopyWorks/app/src/main/res/layout/activity_req_overtime.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/SANIA SMITH/AndroidStudioProjects/UAS FIX/BloopyWorks/app/src/main/res/layout/activity_req_timeoff.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/SANIA SMITH/AndroidStudioProjects/UAS FIX/BloopyWorks/app/src/main/res/layout/activity_request_attendance.xml" value="0.32665330661322645" />
+        <entry key="..\:/Users/SANIA SMITH/AndroidStudioProjects/UAS FIX/BloopyWorks/app/src/main/res/layout/activity_request_early_activity.xml" value="0.16417272338606242" />
         <entry key="..\:/Users/SANIA SMITH/AndroidStudioProjects/UAS FIX/BloopyWorks/app/src/main/res/layout/activity_splash_screen.xml" value="0.13903985507246377" />
+        <entry key="..\:/Users/SANIA SMITH/AndroidStudioProjects/UAS FIX/BloopyWorks/app/src/main/res/layout/activity_timeoff.xml" value="0.16666666666666666" />
         <entry key="..\:/Users/SANIA SMITH/AndroidStudioProjects/UAS FIX/BloopyWorks/app/src/main/res/layout/attendance_card_view.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/SANIA SMITH/AndroidStudioProjects/UAS FIX/BloopyWorks/app/src/main/res/layout/attendance_recycler_view.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/SANIA SMITH/AndroidStudioProjects/UAS FIX/BloopyWorks/app/src/main/res/layout/dropdown_time_off.xml" value="0.16417272338606242" />
+        <entry key="..\:/Users/SANIA SMITH/AndroidStudioProjects/UAS FIX/BloopyWorks/app/src/main/res/layout/early_recycler_view.xml" value="0.22" />
         <entry key="..\:/Users/SANIA SMITH/AndroidStudioProjects/UAS FIX/BloopyWorks/app/src/main/res/layout/fragment_attendance.xml" value="0.16666666666666666" />
-        <entry key="..\:/Users/SANIA SMITH/AndroidStudioProjects/UAS FIX/BloopyWorks/app/src/main/res/layout/fragment_email_verif.xml" value="0.13916591115140525" />
+        <entry key="..\:/Users/SANIA SMITH/AndroidStudioProjects/UAS FIX/BloopyWorks/app/src/main/res/layout/fragment_email_verif.xml" value="0.3333333333333333" />
         <entry key="..\:/Users/SANIA SMITH/AndroidStudioProjects/UAS FIX/BloopyWorks/app/src/main/res/layout/fragment_get_started.xml" value="0.1" />
-        <entry key="..\:/Users/SANIA SMITH/AndroidStudioProjects/UAS FIX/BloopyWorks/app/src/main/res/layout/fragment_homepage.xml" value="0.16666666666666666" />
-        <entry key="..\:/Users/SANIA SMITH/AndroidStudioProjects/UAS FIX/BloopyWorks/app/src/main/res/layout/fragment_login.xml" value="0.22" />
-        <entry key="..\:/Users/SANIA SMITH/AndroidStudioProjects/UAS FIX/BloopyWorks/app/src/main/res/layout/fragment_sign_up.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/SANIA SMITH/AndroidStudioProjects/UAS FIX/BloopyWorks/app/src/main/res/layout/fragment_homepage.xml" value="0.14666666666666667" />
+        <entry key="..\:/Users/SANIA SMITH/AndroidStudioProjects/UAS FIX/BloopyWorks/app/src/main/res/layout/fragment_login.xml" value="0.14666666666666667" />
+        <entry key="..\:/Users/SANIA SMITH/AndroidStudioProjects/UAS FIX/BloopyWorks/app/src/main/res/layout/fragment_sign_up.xml" value="0.34189723320158105" />
         <entry key="..\:/Users/SANIA SMITH/AndroidStudioProjects/UAS FIX/BloopyWorks/app/src/main/res/layout/fragment_sign_up_dialog.xml" value="0.1554850407978241" />
         <entry key="..\:/Users/SANIA SMITH/AndroidStudioProjects/UAS FIX/BloopyWorks/app/src/main/res/layout/homepage_recyler_view.xml" value="0.16666666666666666" />
+        <entry key="..\:/Users/SANIA SMITH/AndroidStudioProjects/UAS FIX/BloopyWorks/app/src/main/res/layout/overtime_recycler_view.xml" value="0.22" />
+        <entry key="..\:/Users/SANIA SMITH/AndroidStudioProjects/UAS FIX/BloopyWorks/app/src/main/res/layout/timeoff_recycler_view.xml" value="0.16417272338606242" />
       </map>
     </option>
   </component>

@@ -21,8 +21,23 @@
             android:id="@+id/homepage_to_emailVerif"
             app:destination="@id/emailVerifFragment" />
         <action
-            android:id="@+id/homepageFragment_to_attendanceFragment"
-            app:destination="@id/attendanceFragment" />
+            android:id="@+id/homepageFragment_to_attendanceActivity"
+            app:destination="@id/attendanceActivity" />
+        <action
+            android:id="@+id/homepageFragment_to_timeoffActivity"
+            app:destination="@id/timeoffActivity" />
+        <action
+            android:id="@+id/homepageFragment_to_getStartedFragment"
+            app:destination="@id/getStartedFragment" />
+        <action
+            android:id="@+id/homepageFragment_to_liveLocationActivity"
+            app:destination="@id/liveLocationActivity" />
+        <action
+            android:id="@+id/homepageFragment_to_earlyActivity"
+            app:destination="@id/earlyActivity" />
+        <action
+            android:id="@+id/homepageFragment_to_overtimeActivity"
+            app:destination="@id/overtimeActivity" />
     </fragment>
 
     <fragment
@@ -39,6 +54,9 @@
         <action
             android:id="@+id/getStartedFragment_to_signUpFragment"
             app:destination="@id/signUpFragment" />
+        <action
+            android:id="@+id/getStartedFragment_to_emailVerifFragment"
+            app:destination="@id/emailVerifFragment" />
     </fragment>
 
     <fragment
@@ -52,12 +70,19 @@
         <action
             android:id="@+id/loginFragment_to_signUpFragment"
             app:destination="@id/signUpFragment" />
+        <action
+            android:id="@+id/loginFragment_to_emailVerifFragment"
+            app:destination="@id/emailVerifFragment" />
     </fragment>
 
     <fragment
         android:id="@+id/emailVerifFragment"
         android:name="id.bloopyworks.platform.ui.landing.emailVerif.EmailVerifFragment"
-        android:label="EmailVerifFragment" />
+        android:label="EmailVerifFragment" >
+        <action
+            android:id="@+id/emailVerifFragment_to_homepageFragment"
+            app:destination="@id/homepageFragment" />
+    </fragment>
     <fragment
         android:id="@+id/signUpFragment"
         android:name="id.bloopyworks.platform.ui.landing.signUp.SignUpFragment"
@@ -66,11 +91,39 @@
         <action
             android:id="@+id/signUpFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/signUpFragment_to_emailVerifFragment"
+            app:destination="@id/emailVerifFragment" />
     </fragment>
-    <fragment
-        android:id="@+id/attendanceFragment"
-        android:name="id.bloopyworks.platform.ui.mainscreen.homepage.attendance.AttendanceFragment"
-        android:label="fragment_attendance"
-        tools:layout="@layout/fragment_attendance" />
+    <activity
+        android:id="@+id/splashScreenActivity"
+        android:name="id.bloopyworks.platform.ui.landing.splashScreen.SplashScreenActivity"
+        android:label="activity_splash_screen"
+        tools:layout="@layout/activity_splash_screen" />
+    <activity
+        android:id="@+id/attendanceActivity"
+        android:name="id.bloopyworks.platform.ui.mainscreen.homepage.attendance.AttendanceActivity"
+        android:label="activity_attendance"
+        tools:layout="@layout/activity_attendance" />
+    <activity
+        android:id="@+id/timeoffActivity"
+        android:name="id.bloopyworks.platform.ui.mainscreen.homepage.timeoff.TimeoffActivity"
+        android:label="activity_timeoff"
+        tools:layout="@layout/activity_timeoff" />
+    <activity
+        android:id="@+id/earlyActivity"
+        android:name="id.bloopyworks.platform.ui.mainscreen.homepage.early.EarlyActivity"
+        android:label="activity_early"
+        tools:layout="@layout/activity_early" />
+    <activity
+        android:id="@+id/liveLocationActivity"
+        android:name="id.bloopyworks.platform.ui.mainscreen.homepage.livelocation.LiveLocationActivity"
+        android:label="activity_live_location"
+        tools:layout="@layout/activity_live_location" />
+    <activity
+        android:id="@+id/overtimeActivity"
+        android:name="id.bloopyworks.platform.ui.mainscreen.homepage.overtime.OvertimeActivity"
+        android:label="activity_overtime"
+        tools:layout="@layout/activity_overtime" />
 
 </navigation>

@@ -3,12 +3,18 @@ package id.bloopyworks.platform.core.di
 import id.bloopyworks.platform.BuildConfig
 import id.bloopyworks.platform.core.data.bloopyRepository
 import id.bloopyworks.platform.core.data.source.local_datastore.DataStorePref.token_key
+//import id.bloopyworks.platform.core.data.source.local_datastore.DataStorePref.token_verif
+//import id.bloopyworks.platform.core.data.source.local_datastore.DataStorePref.user_id
 import id.bloopyworks.platform.core.data.source.local_datastore.DataStoreRepository
 import id.bloopyworks.platform.core.data.source.remote.RemoteDataSource
 import id.bloopyworks.platform.core.data.source.remote.network.ApiService
 import id.bloopyworks.platform.core.utlis.Constant
+import id.bloopyworks.platform.ui.landing.emailVerif.EmailVerificationViewModel
 import id.bloopyworks.platform.ui.landing.login.LoginViewModel
+import id.bloopyworks.platform.ui.landing.signUp.SignUpViewModel
 import id.bloopyworks.platform.ui.mainactivity.MainActivityViewModel
+import id.bloopyworks.platform.ui.mainscreen.homepage.HomepageViewModel
+import id.bloopyworks.platform.ui.mainscreen.homepage.attendance.ReqAttendaceViewModel
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.android.ext.koin.androidContext
@@ -23,6 +29,10 @@ import java.util.concurrent.TimeUnit
 val viewModelModule = module {
     viewModel { MainActivityViewModel(get()) }
     viewModel { LoginViewModel(get(), get()) }
+    viewModel { SignUpViewModel(get()) }
+    viewModel { EmailVerificationViewModel(get()) }
+    viewModel { HomepageViewModel(get(), get()) }
+//    viewModel { ReqAttendaceViewModel(get(), get()) }
 }
 
 val repositoryModule = module {
@@ -31,7 +41,9 @@ val repositoryModule = module {
 
     //datastore
     single(named(Constant.TOKEN_KEY)) { androidContext().token_key }
-    single { DataStoreRepository(get(named(Constant.TOKEN_KEY))) }
+    single { DataStoreRepository(get(named(Constant.TOKEN_KEY)))}
+//    single(named(Constant.TOKEN_VERIF)) {androidContext().token_verif }
+//    single (named(Constant.TOKEN_USERID)) {androidContext().user_id }
 }
 
 
